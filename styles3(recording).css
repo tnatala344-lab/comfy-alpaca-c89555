@@ -154,4 +154,55 @@ body {
 .social-links img:hover {
     transform: scale(1.1);
     opacity: 0.8;
+
+}
+
+/* 7. Адаптація для мобільних пристроїв (Recording) */
+@media screen and (max-width: 768px) {
+    
+    /* Шапка: переводимо в стовпчик для економії місця */
+    .header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .navigation ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Контейнер форми (Box Model у дії) */
+    .order-container {
+        width: 95%; /* Залишаємо маленькі відступи від країв екрана */
+        margin: 20px auto;
+        padding: 15px; /* Внутрішні відступи для мобільного */
+    }
+
+    .order-title {
+        font-size: 24px;
+    }
+
+    /* Поля вводу: робимо їх зручнішими для дотику пальцем */
+    .form-input, 
+    .form-select, 
+    .form-input-date, 
+    .form-textarea {
+        padding: 15px; /* Збільшуємо Padding, щоб зручніше було влучити пальцем */
+        font-size: 16px; /* Стандарт для мобільних форм */
+    }
+
+    /* Кнопка на всю ширину */
+    .button-submit {
+        width: 100%;
+        padding: 18px;
+        font-size: 20px;
+    }
+
+    /* Футер стає компактнішим */
+    .footer {
+        margin-top: 40px;
+    }
 }
