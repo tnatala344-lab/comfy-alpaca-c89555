@@ -103,40 +103,40 @@ body {
 /* Таблиця Команда (Чіткі грані) */
 .team-table {
     width: 100%;
-    border-collapse: collapse; /* Чіткі грані */
+    border-collapse: collapse;
     margin: 20px 0;
 }
 
 .team-table th, .team-table td {
-    border: 1px solid #333; /* Чорні грані */
+    border: 1px solid #333;
     padding: 12px;
     text-align: left;
 }
 
 .team-table thead {
     background-color: #b67b73;
-    color: rgb(3, 209, 30);
+    color: white; /* Змінено на білий для кращої читабельності */
 }
 
 .team-table tr:nth-child(even) {
     background-color: #fdfaf9;
 }
 
-/* Таблиця Розклад (Чіткі грані) */
+/* Таблиця Розклад */
 .styled-table {
     width: 100%;
-    border-collapse: collapse; /* Змінено на collapse для чітких граней */
+    border-collapse: collapse;
     margin-bottom: 50px;
 }
 
 .styled-table th, .styled-table td {
-    border: 1px solid #f8b489; /* Грані в кольорі акценту */
+    border: 1px solid #f8b489;
     padding: 15px;
 }
 
 .styled-table thead {
     background-color: #f8b489;
-    color: rgb(8, 176, 73);
+    color: white;
 }
 
 .weekend {
@@ -144,39 +144,18 @@ body {
     font-weight: bold;
 }
 
-/* ВІДГУКИ (Без декоративних лапок) */
+/* ВІДГУКИ */
 .reviews {
     padding: 60px 0;
     background-color: #fdfaf9;
-}
-
-.reviews h2 {
-    text-align: center;
-    color: #b67b73;
-    margin-bottom: 40px;
 }
 
 .review {
     background: #ffffff;
     border-radius: 15px;
     padding: 30px;
-    margin-bottom: 30px; /* Відступи між відгуками */
+    margin-bottom: 30px;
     box-shadow: 0 10px 25px rgba(182, 123, 115, 0.1);
-}
-
-.review p {
-    font-style: italic;
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.review cite {
-    display: block;
-    text-align: right;
-    color: #b67b73;
-    font-weight: bold;
-    font-style: normal;
 }
 
 /* Форма контактів */
@@ -212,23 +191,9 @@ body {
     border-radius: 12px;
 }
 
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-.social-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-
-}
 /* 7. Адаптація для мобільних пристроїв (Media Queries) */
 @media screen and (max-width: 768px) {
     
-    /* Шапка стає вертикальною */
     .header {
         flex-direction: column;
         padding: 20px;
@@ -241,40 +206,65 @@ body {
         justify-content: center;
     }
 
-    /* Контейнер: зменшуємо бокові відступи */
     .container {
         padding: 0 15px;
     }
 
-    /* Таблиці (Команда та Розклад) */
-    /* Додаємо обгортку з прокруткою, щоб таблиці не вилазили за екран */
-    .team, .schedule-section {
+    /* ПЕРЕТВОРЕННЯ ТАБЛИЦЬ НА КАРТКИ */
+    .team-table, .styled-table, 
+    .team-table thead, .team-table tbody, 
+    .team-table th, .team-table td, .team-table tr,
+    .styled-table thead, .styled-table tbody, 
+    .styled-table th, .styled-table td, .styled-table tr {
         display: block;
         width: 100%;
-        overflow-x: auto; /* Горизонтальна прокрутка */
-        -webkit-overflow-scrolling: touch;
     }
 
-    .team-table, .styled-table {
-        min-width: 600px; /* Гарантуємо, що текст не злипнеться */
+    /* Ховаємо оригінальні заголовки таблиць */
+    .team-table thead tr, .styled-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
     }
 
-    /* Секція контактів: форма та картинка одна під одною */
+    .team-table tr, .styled-table tr {
+        margin-bottom: 20px;
+        border: 2px solid #b67b73;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    .team-table td, .styled-table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50% !important;
+        text-align: right;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    /* Додаємо назви колонок через атрибут data-label */
+    .team-table td:before, .styled-table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+        color: #b67b73;
+    }
+
     .contact-container {
         flex-direction: column;
         gap: 30px;
-    }
-
-    .contact-image-only img {
-        margin-top: 20px;
-    }
-
-    /* Текст "Про нас" робимо по центру для кращого вигляду */
-    .about p {
-        text-align: left; /* На мобільних justify іноді створює великі дірки */
     }
 
     .title {
         font-size: 28px;
     }
 }
+
