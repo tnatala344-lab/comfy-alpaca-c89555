@@ -191,6 +191,43 @@ body {
     border-radius: 12px;
 }
 
+/* 6. Футер */
+.footer {
+    padding: 10px 0; /* Зменшено висоту футера */
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row; /* Змінено з column на row */
+    justify-content: center; /* Центрує іконки по горизонталі */
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.social-links img {
+    width: 40px;
+    height: auto;
+    transition: 0.3s;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+
+
 /* 7. Адаптація для мобільних пристроїв (Media Queries) */
 @media screen and (max-width: 768px) {
     
@@ -267,4 +304,5 @@ body {
         font-size: 28px;
     }
 }
+
 
