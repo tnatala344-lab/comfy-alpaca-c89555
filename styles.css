@@ -18,8 +18,13 @@ body {
     align-items: center;
     padding: 10px 60px;
     width: 100%;
+    background-color: #fff; /* Поточний колір (білий) */
+    transition: background-color 0.4s ease; /* Плавний перехід кольору */
 }
-
+/* Зміна кольору при наведенні */
+.header:hover {
+    background-color: #fdfaf9; /* Новий колір (наприклад, ніжно-кремовий) */
+}
 .logo img {
     height: 100px;
     width: auto;
@@ -276,3 +281,4 @@ body {
     opacity: 0.8;
 
 }
+
