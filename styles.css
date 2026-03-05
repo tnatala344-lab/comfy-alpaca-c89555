@@ -23,7 +23,7 @@ body {
 }
 /* Зміна кольору при наведенні */
 .header:hover {
-    background-color: #fdfaf9; /* Новий колір (наприклад, ніжно-кремовий) */
+    background-color: #3e417a; 
 }
 .logo img {
     height: 100px;
@@ -281,4 +281,5 @@ body {
     opacity: 0.8;
 
 }
+
 
